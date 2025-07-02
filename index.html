@@ -198,11 +198,11 @@
         </svg>
         <h1>Pilih Peran</h1>
         
-        <button class="role-btn admin-btn" onclick="redirectToSystem('admin')">
+        <button class="role-btn admin-btn" onclick="redirectToDashboard()">
             <i class="fas fa-user-shield"></i> Admin
         </button>
         
-        <button class="role-btn operator-btn" onclick="redirectToSystem('operator')">
+        <button class="role-btn operator-btn" onclick="redirectToDashboard()">
             <i class="fas fa-user-cog"></i> Operator
         </button>
         
@@ -216,13 +216,9 @@
             document.getElementById('loginScreen').classList.add('visible');
         }, 3000);
         
-        function redirectToSystem(role) {
-            // Redirect ke dashboard sesuai role
-            if (role === 'admin') {
-                window.location.href = "admin-dashboard.html";
-            } else {
-                window.location.href = "operator-dashboard.html";
-            }
+        function redirectToDashboard() {
+            // Redirect ke dashboard yang sama untuk admin dan operator
+            window.location.href = "https://ridwan89.github.io/BusManagement-dashboard-2/";
         }
     </script>
 </body>
