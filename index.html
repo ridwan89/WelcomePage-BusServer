@@ -35,6 +35,7 @@
             transform: translateY(0);
             transition: all 1s ease;
             position: absolute;
+            padding: 0 1rem; /* Added for spacing on small screens */
         }
         
         .welcome-container.hidden {
@@ -115,6 +116,7 @@
             transform: translateY(20px);
             visibility: hidden;
             transition: all 1s ease;
+            margin: 0 1rem; /* Added for spacing on small screens */
         }
         
         .login-container.visible {
@@ -172,10 +174,40 @@
             font-size: 0.875rem;
             color: #a0aec0;
         }
+
+        /* --- Responsive Design for Mobile --- */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem; /* Smaller heading */
+            }
+
+            p {
+                font-size: 1rem; /* Smaller paragraph text */
+            }
+
+            .logo {
+                width: 120px; /* Smaller welcome logo */
+                height: 120px;
+            }
+
+            .loading-bar {
+                width: 250px; /* Shorter loading bar */
+            }
+
+            .login-container {
+                padding: 2rem; /* Less padding inside login box */
+                max-width: 90%; /* Ensure it doesn't touch screen edges */
+            }
+
+            .login-logo {
+                width: 70px; /* Smaller login logo */
+                height: 70px;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <!-- Welcome Screen -->
     <div class="welcome-container" id="welcomeScreen">
         <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
@@ -189,7 +221,6 @@
         </div>
     </div>
 
-    <!-- Login Screen -->
     <div class="login-container" id="loginScreen">
         <svg class="login-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4a5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
@@ -210,14 +241,14 @@
     </div>
 
     <script>
-        // Setelah loading selesai, beralih ke halaman login
+        // After loading is complete, switch to the login page
         setTimeout(function() {
             document.getElementById('welcomeScreen').classList.add('hidden');
             document.getElementById('loginScreen').classList.add('visible');
         }, 3000);
         
         function redirectToDashboard() {
-            // Redirect ke dashboard yang sama untuk admin dan operator
+            // Redirect to the same dashboard for admin and operator
             window.location.href = "https://ridwan89.github.io/BusManagement-dashboard-2/";
         }
     </script>
